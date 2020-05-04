@@ -1,33 +1,30 @@
-body {
-    width: 50%;
-    margin: 0px auto;
-
+.container {
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 1px #000 solid;
+    width: 30%;
+    overflow: hidden;
 }
-header{
-    background-color: black; 
-    color: white; 
-    text-align: center; 
-    padding: 5px;
+#mainHeader {
+    background-color: #bebdbd;
+    text-align: center;
+    color: #1d1c1c;
+    padding: 10px;
 }
-nav{
-    text-align: center; 
-    line-height: 30px; 
-    background-color: #eeeeee; 
-    height: 300px; 
-    width: 100px; 
-    float: left; 
-    padding: 5px;
+#formData {
+    margin: 0 auto;
+    text-align: center;
+    color: #1d1c1c;
+    padding: 10px;
 }
-section {
-    width: 350px; 
-    float: left; 
-    padding: 10px; 
-    margin: 0px 225px auto;
+.registrationLabel {
+    text-align: left;
+    margin-left: 21px;
 }
-footer{
-    background-color: black; 
-    color: white; 
-    text-align: center; 
-    padding: 5px; 
-    clear: both;
-} 
+.signInLabel {
+    text-align: center;
+}
+#age {
+    width: 30px;
+}
