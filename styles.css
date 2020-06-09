@@ -21,7 +21,7 @@ li {
 li, a {
     display: inline-block;
     color: white;
-    padding: 12px;
+    padding: 8px;
 }
 /*
     This style effects the 'background-color' of only an 'a' element
@@ -32,6 +32,9 @@ li a:hover {
 }
 a {
     text-decoration: none;
+}
+div h2, h4, p {
+    color: azure;
 }
 /*
     This style effects the element with the id of #outerDiv.
@@ -63,6 +66,9 @@ a {
     background-color: blue;
     width: 80%;
 }
-#divLeft_CELinks, #divLeft_ALinks, #divleft_RLinks{
+#divLeft_Default{
+    display: block;
+}
+#divLeft_CELinks, #divLeft_ALinks, #divLeft_RLinks{
     display: none;
 }
