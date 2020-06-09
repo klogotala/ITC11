@@ -1,30 +1,50 @@
-/*
-        This function is called by the links in the nav area of the page.
-        The function creates 2 links and places them into the teal colored div.
-        The text in the blue div is also changed.
-    */
-function changeLinkText(lnk) {
-    // Condition checks which link was click by passing value to the 'lnk' variable
-    // the visibility of the corresponding div is updated accordingly. 
-    case 'home':
-        document.getElementById('divLeft_Default').style.display = "block";
-        document.getElementById('divLeft_CELinks').style.display = "none";
-        document.getElementById('divLeft_ALinks').style.display = "none";
-        document.getElementById('divLeft_Links').style.display = "none";
-        document.getElementById('divRight').innerHTML = "Home link clicked, Default text displayed.";
-        document.getElementById('ls_Heading').innerHTML = "ITC-111";
-        document.getElementById('rs_Heading').innerHTML = "Intro to Programming";
-    break;
+var idSetting = ["divLeft_Default","divLeft_CELinks","divLeft_ALinks","divLeft_RLinks","divRight","ls_Heading","rs_Heading"];
 
-    case 'classEx':
-        document.getElementById('divLeft_Default').style.display = "none";
-        document.getElementById('divLeft_CELinks').style.display = "block";
-        document.getElementById('divLeft_ALinks').style.display = "none";
-        document.getElementById('divLeft_RLinks').style.display = "none";
-        document.getElementById('divRight').innerHTML = "Default description for Class Exercises Link.";
-        document.getElementById('ls_Heading').innerHTML = "Class Exercises";
-        document.getElementById('rs_Heading').innerHTML = "Exercise Description";
-    break;
+var home = {
+    dispSettings : ["block","none","none","none"],
+    innerHTMLSettings : ["Home link clicked. Defaul text displayed.","ITC-111","Intro to Programming <br>w/HTML, CSS & JavaScript"]
+}
+var classExercises = {
+    dispSettings : ["none","block","none","none"],
+    innerHTMLSettings : ["Defaul description for the Class Exercise Link.","Class Exercise Links","Exercise Description"]
+}
+var assignments = {
+    dispSettings : ["none","none","block","none"],
+    innerHTMLSettings : ["Defaul description for the Assignment Link.","Assignment Links","Assignment Description"]
+}
+var resources = {
+    dispSettings : ["none","none","none","block"],
+    innerHTMLSettings : ["Defaul description for the Resouce Link.","Resource Topics","Resource Catalouge"]
+}
+function changeLinkText(lnk) {
+    let lnkObj;
+    switch(lnk){
+        case 'home':
+            lnkObj = home;
+            break;
+        case 'classEx':
+            lnkObj = classExercises;
+            break;
+        case 'assign':
+            lnkObj = assignments;
+            break;
+        case 'resource':
+            lnkObj = resources;
+            break;
+        default:
+            break;
+    }
+    document.getElementById(idSetting[0]).style.display = lnkObj.dispSettings[0];
+    document.getElementById(idSetting[1]).style.display = lnkObj.dispSettings[1];
+    document.getElementById(idSetting[2]).style.display = lnkObj.dispSettings[2];
+    document.getElementById(idSetting[3]).style.display = lnkObj.dispSettings[3];
+    document.getElementById(idSetting[4]).innerHTML = lnkObj.innerHTMLSettings[0];
+    document.getElementById(idSetting[5]).innerHTML = lnkObj.innerHTMLSettings[1];
+    document.getElementById(idSetting[6]).innerHTML = lnkObj.innerHTMLSettings[2];
+}
+function changeDivRightText(txt) {  
+    document.getElementById('rs_Heading').innerHTML = txt;
+}
 
     case 'assign':
         document.getElementById('divLeft_Default').style.display = "none";
